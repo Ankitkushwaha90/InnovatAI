@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* ======= HEADER ======= */}
           <header className="bg-gray-900 p-6 flex items-center justify-between shadow-md fixed w-full z-10">
             <Link href="/" className="text-2xl font-bold text-green-400">
-              CyberMind
+              InnovatAI
             </Link>
 
             <nav className="flex gap-6 text-sm items-center ">

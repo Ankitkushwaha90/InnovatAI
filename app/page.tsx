@@ -18,7 +18,7 @@ export default function Home() {
       {/* Features */}
       <section id="features" className="py-20 px-10 bg-gray-900">
         <h3 className="text-3xl font-bold mb-10 text-center text-green-400">Features</h3>
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           <FeatureCard
             title="🔍 Vulnerability Scanner"
             desc="Real-time scanning of networks and web apps for known CVEs and unknown threats."
@@ -31,7 +31,7 @@ export default function Home() {
             title="💻 Pentesting Toolkit"
             desc="Built-in terminal tools for recon, Wi-Fi hacking, and exploitation simulations."
           />
-        </div> */}
+        </div>
       </section>
 
       {/* About */}
@@ -54,11 +54,15 @@ export default function Home() {
 }
 
 // Reusable Card
-function FeatureCard() {
+type FeatureCardProps = {
+  title: string;
+  desc: string;
+};
+function FeatureCard({ title, desc }: FeatureCardProps) {
   return (
     <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-green-500/30 transition duration-200">
-      <h4 className="text-xl font-semibold mb-2">InnovatAi</h4>
-      <p className="text-gray-300">Welcome to InnovatAi, a cutting-edge AI model creation startup dedicated to building bespoke artificial intelligence solutions tailored to your business needs. We specialize in developing, training, and deploying high-performance AI models across industries—from healthcare and finance to e-commerce and automation.</p>
+      <h4 className="text-xl font-semibold mb-2">{title}</h4>
+      <p className="text-gray-300">{desc}</p>
     </div>
   );
 }

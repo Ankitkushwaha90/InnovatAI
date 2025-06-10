@@ -1,0 +1,35 @@
+'use client';
+
+import { useState } from 'react';
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    title: '',
+    useCase: '',
+    modelType: '',
+    dataset: false,
+    budget: '',
+    timeline: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Submitted:', formData);
+    alert('Thank you! Your project details have been submitted.');
+  };
+
+  return (
+    
+  );
+}
